@@ -47,15 +47,7 @@ import { siginCyberbugsAction } from '../../../redux/actions/CyberBugsAction';
 
 const LoginCyberBugsWithFormik = withFormik({
     mapPropsToValues: () => ({ email: '', password: '' }),
-    // Custom sync validation
-    // validate: values => {
-    //   const errors = {};
-    //   if (!values.name) {
-    //     errors.name = 'Required';
-    //   }
-  
-    //   return errors;
-    // },
+   
     validationSchema: Yup.object().shape({
         email: Yup.string().required("Email is required").email("Email is not valid"),
         password: Yup.string().min(6, "password must be from 6 - 32 char").max(32, "password must be from 6 - 32 char")

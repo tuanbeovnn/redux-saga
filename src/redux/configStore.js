@@ -6,6 +6,8 @@ import UserLoginCyberBugsReducer from './reducers/UserCyberBugsReducer';
 import reduxThunk from 'redux-thunk';
 import createMiddleWareSaga from 'redux-saga'; 
 import {rootSaga} from './sagas/rootSaga'; 
+import ProjectCategoryReducer from "./reducers/ProjectCategoryReducer";
+import ProjectCyberBugsReducer from "./reducers/ProjectCyberBugsReducer";
 
 const middleWareSaga = createMiddleWareSaga(); 
 
@@ -15,8 +17,10 @@ const rootReducer = combineReducers({
     LoadingReducer,
     ModalReducer,
     UserLoginCyberBugsReducer, 
+    ProjectCategoryReducer,
+    ProjectCyberBugsReducer
     
- 
+
 }); 
 
 

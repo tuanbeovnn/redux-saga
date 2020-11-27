@@ -17,7 +17,6 @@ function * signinSaga(action){
 //gọi api 
 try {
   const {data, status} = yield cyberbugsService.signinCyberBugs(action.userLogin) ; 
-  console.log(data);
   //lưu vào local store khi đăng nhập sucessfull
   localStorage.setItem(TOKEN, data.content.accessToken); 
   localStorage.setItem(USER_LOGIN,JSON.stringify(data.content)); 

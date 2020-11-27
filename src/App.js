@@ -19,11 +19,14 @@ import HomeTemplate from './templates/HomeTemplate/HomeTemplate';
 import UserLoginTemplate from './templates/HomeTemplate/UserLoginTemplate'; 
 import LoginCyberBugs from './pages/CyberBugs/LoginCyberBug/LoginCyberBugs';
 import {history} from './util/history/history'; 
+import indexCyberBugs from './redux/sagas/Cyberbugs/indexCyberBugs';
+import CyberbugsTemplate from './templates/HomeTemplate/CyberbugsTemplate';
+import CreateProject from './pages/CyberBugs/CreateProject/CreateProject';
+import ProjectManagement from './pages/CyberBugs/ProjectManagement/ProjectManagement';
 export default class App extends Component {
   render() {
     return (
       <Router history = {history}>
-    
 
       <Modal/>
       <Loading/>
@@ -46,7 +49,9 @@ export default class App extends Component {
         <HomeTemplate  exact path="/todolistredux"  Component={ToDoListRedux} />
         <HomeTemplate  exact path="/todolistsaga"  Component={BaiTapToDoListSaga} />     
         <HomeTemplate  exact path="/demohocmodal"  Component={DemoHOCModal} />   
-          
+        <CyberbugsTemplate exact path = "/cyberbugs" Component = {indexCyberBugs}/>
+        <CyberbugsTemplate exact path = "/createproject" Component = {CreateProject}/>
+        <CyberbugsTemplate exact path = "/projectmanagement" Component = {ProjectManagement}/>
         <Route  path="*"  Component={PageNotFound} />      
       </Switch>
 
